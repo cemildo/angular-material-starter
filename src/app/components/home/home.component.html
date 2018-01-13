@@ -1,0 +1,69 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile>
+
+    <form>
+      <table class="example-full-width" cellspacing="0" *ngIf="person">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="person.cell" name="cell" placeholder="Cell phone" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="person.dob" name="dob" placeholder="Date of birth" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="person.email" name="email" placeholder="email" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="person.registered" name="registered" placeholder="Register date" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="person.name.first" name="firstname" placeholder="First name" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput [(ngModel)]="person.name.last" name="lastname" placeholder="Last name" />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <div class="button-row">
+                  <button mat-raised-button (click)="getPerson()">Show new Person</button>
+                  <button mat-raised-button color="primary">Primary</button>
+                  <button mat-raised-button color="accent">Accent</button>
+                  <button mat-raised-button color="warn">Warn</button>
+                </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+    <div *ngIf="person">
+      <img src="{{person.picture.large}}" width="300" />
+    </div>
+
+  </mat-grid-tile>
+</mat-grid-list>
